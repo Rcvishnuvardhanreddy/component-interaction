@@ -7,13 +7,12 @@ export abstract class BaseChildComponent {
 
     @Output() inputChange = new EventEmitter<boolean>();
     @Output() onParentValueModelUpdated = new EventEmitter<ChildsInput>();
-
-
-    abstract isValid(): boolean;
+   abstract isValid(): boolean;
 
     onInputChange() {
         this.inputChange.emit(this.isValid());
     }
+
 
     getJSONValue() {
         return JSON.stringify(this.parentValueModel)
