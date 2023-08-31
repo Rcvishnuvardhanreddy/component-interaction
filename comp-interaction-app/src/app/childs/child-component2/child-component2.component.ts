@@ -19,6 +19,7 @@ export class ChildComponent2Component extends BaseChildComponent implements OnIn
 
   override isValid() {
     this.parentValueModel.input2 = this.childComponent2Input;
-    return this.childComponent2Input.length >= 5;
+    this.isFormValid = this.childComponent2Input.length >= 4;
+    return this.isFormValid
   }
 }

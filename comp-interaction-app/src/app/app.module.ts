@@ -7,13 +7,15 @@ import { ChildComponent1Component } from './childs/child-component1/child-compon
 import { ChildComponent2Component } from './childs/child-component2/child-component2.component';
 import { ChildComponent3Component } from './childs/child-component3/child-component3.component';
 import { FormsModule } from '@angular/forms';
+import { ParentComponent } from './parent/parent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChildComponent1Component,
     ChildComponent2Component,
-    ChildComponent3Component
+    ChildComponent3Component,
+    ParentComponent
   ],
   imports: [
     BrowserModule,

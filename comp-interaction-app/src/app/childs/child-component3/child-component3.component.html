@@ -1,5 +1,6 @@
 <h2>child-component 3 works!</h2>
-<input [(ngModel)]="childComponent3Input" (input)="onInputChange()"> <span style="color: red;">(enter more than 5 characters for Valid)</span>
+<input [(ngModel)]="childComponent3Input" (input)="onInputChange()"> 
+<span style="color: red;" *ngIf="!isFormValid">(enter more than 5 characters for Valid)</span>
     
 
 <div>
