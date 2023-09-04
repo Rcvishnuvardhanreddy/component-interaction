@@ -13,7 +13,9 @@ export class ChildComponent1Component extends BaseChildComponent implements OnIn
   }
 
   ngOnInit(): void {
-  this.intializeForm();
+    this.intializeForm();
+
+    // can declare Form Controls here
     this.myForm.addControl('input1', new FormControl('', [Validators.required, Validators.minLength(3)]))
   }
 }
