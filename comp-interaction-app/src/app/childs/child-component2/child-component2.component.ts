@@ -8,7 +8,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./child-component2.component.scss']
 })
 export class ChildComponent2Component extends BaseChildComponent implements OnInit {
-  childComponent2Input: string = '';
 
   constructor() {
     super();
@@ -16,11 +15,6 @@ export class ChildComponent2Component extends BaseChildComponent implements OnIn
 
   ngOnInit(): void {
     this.myForm = this.parentValueModel.get(this.formName) as FormGroup;
-    this.myForm.addControl('input2', new FormControl('', [Validators.required, Validators.min(4)]))
-  }
-
-  override isValid() {
-    this.isFormValid = this.childComponent2Input.length >= 4;
-    return this.isFormValid
+    this.myForm.addControl('input2', new FormControl('', [Validators.required, Validators.minLength(4)]))
   }
 }

@@ -1,9 +1,13 @@
 <h2>child-component 1 works!</h2>
 <form [formGroup]="myForm">
-    <input formControlName="input1" (input)="onInputChange()"> 
+    <input formControlName="input1"> 
     <span style="color: red;" *ngIf="!myForm.controls['input1'].valid">(enter more than 3 characters for Valid)</span>
 </form>
 
 <div>
-    {{getJSONValue()}}
+    {{myForm.value | json}}
+</div>
+
+<div>
+    Parent Value: {{parentValueModel.value | json}}
 </div>

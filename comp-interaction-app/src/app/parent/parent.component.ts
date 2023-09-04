@@ -8,9 +8,6 @@ import { FormArray, FormControl, FormGroup } from '@angular/forms';
 })
 export class ParentComponent {
   isAllchildsValid: boolean = false;
-
-  childsValidationStatus = [false, false, false];
-
   title = 'comp-interaction-app';
 
   parentForms: any = [];
@@ -24,11 +21,6 @@ export class ParentComponent {
   }
 
   ngOnInit(): void {
-  }
-
-  onChildValidataionStatusChange(childNumber: number, $event: any) {
-    this.childsValidationStatus[childNumber] = $event;
-    this.isAllchildsValid = !this.childsValidationStatus.some(ele => ele == false)
   }
 
   areAllChildGroupsValid() {
@@ -45,15 +37,3 @@ export class ParentComponent {
     return true; // All child groups are valid
   }
 }
-
-// export class ChildsInput {
-//   input1: string;
-//   input2: string;
-//   input3: string;
-
-//   constructor() {
-//     this.input1 = '';
-//     this.input2 = '';
-//     this.input3 = '';
-//   }
-// }

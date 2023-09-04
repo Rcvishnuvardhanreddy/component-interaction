@@ -8,21 +8,12 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./child-component1.component.scss']
 })
 export class ChildComponent1Component extends BaseChildComponent implements OnInit {
-  childComponent1Input: string = '';
-
-  constructor(private formBuilder: FormBuilder) {
+  constructor() {
     super();
-
-}
-
-  ngOnInit(): void {
-  
-    this.myForm = this.parentValueModel.get(this.formName) as FormGroup;
-
-    this.myForm.addControl('input1', new FormControl('', [Validators.required, Validators.min(3)]))
   }
 
-  override isValid(): boolean {
-    return this.myForm.valid
+  ngOnInit(): void {
+    this.myForm = this.parentValueModel.get(this.formName) as FormGroup;
+    this.myForm.addControl('input1', new FormControl('', [Validators.required, Validators.minLength(3)]))
   }
 }
