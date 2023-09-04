@@ -1,13 +1,16 @@
-import { Directive, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-@Directive()
+@Component({
+    template: ''
+})
 export abstract class BaseChildComponent {
-    @Input() parentValueModel: FormGroup = new FormGroup({});
+    @Input() parentForm: FormGroup = new FormGroup({});
     @Input() formName: string = '';
 
-    @Output() inputChange = new EventEmitter<boolean>();
-
-    public isFormValid: boolean = false;
     myForm: FormGroup = new FormGroup({});
+
+    intializeForm() {
+        this.myForm = this.parentForm.get(this.formName) as FormGroup;
+    }
 }

@@ -1,15 +1,16 @@
 <p>Parent Component</p>
 
 
-<app-child-component1 [parentValueModel]="parentForms" [formName]='"child1"'></app-child-component1>
-<app-child-component2 [parentValueModel]="parentForms" [formName]='"child2"'></app-child-component2>
-<app-child-component3 [parentValueModel]="parentForms" [formName]='"child3"'></app-child-component3>
+<app-child-component1 [parentForm]="parentForm" [formName]='"child1"'></app-child-component1>
+<app-child-component2 [parentForm]="parentForm" [formName]='"child2"'></app-child-component2>
+<app-child-component3 [parentForm]="parentForm" [formName]='"child3"'></app-child-component3>
 
-<p style="color: red;" *ngIf="!areAllChildGroupsValid()">In Valid</p>
-<p style="color: blue;" *ngIf="areAllChildGroupsValid()">Valid</p>
+<p style="color: red;" *ngIf="!parentForm.valid">In Valid</p>
+<p style="color: blue;" *ngIf="parentForm.valid">Valid</p>
 
+<p *ngIf="dummyFunction()">Valid</p>
 
 
 <div>
-    {{parentForms.value | json}}
+    {{parentForm.value | json}}
 </div>

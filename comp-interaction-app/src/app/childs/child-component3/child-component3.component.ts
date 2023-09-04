@@ -13,7 +13,7 @@ export class ChildComponent3Component extends BaseChildComponent implements OnIn
   }
 
   ngOnInit(): void {
-    this.myForm = this.parentValueModel.get(this.formName) as FormGroup;
+    this.intializeForm();
     this.myForm.addControl('input3', new FormControl('', [Validators.required, Validators.minLength(5)]))
   }
 }
