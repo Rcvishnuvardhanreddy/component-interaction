@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ChildComponent1Component } from './childs/child-component1/child-component1.component';
 import { ChildComponent2Component } from './childs/child-component2/child-component2.component';
 import { ChildComponent3Component } from './childs/child-component3/child-component3.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParentComponent } from './parent/parent.component';
 
 @NgModule({
@@ -19,7 +19,8 @@ import { ParentComponent } from './parent/parent.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    // FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],

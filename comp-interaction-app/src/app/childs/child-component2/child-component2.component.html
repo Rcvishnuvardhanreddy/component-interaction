@@ -1,7 +1,8 @@
 <h2>child-component 2 works!</h2>
-<input [(ngModel)]="childComponent2Input" (input)="onInputChange()">
-<span style="color: red;" *ngIf="!isFormValid">(enter more than 4 characters for Valid)</span>
-    
+<form [formGroup]="myForm">
+    <input formControlName="input2" (input)="onInputChange()"> 
+    <span style="color: red;" *ngIf="!myForm.controls['input2'].valid">(enter more than 4 characters for Valid)</span>
+</form>
 
 <div>
     {{getJSONValue()}}

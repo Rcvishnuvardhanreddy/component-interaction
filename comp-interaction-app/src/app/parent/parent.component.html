@@ -1,9 +1,9 @@
 <p>Parent Component</p>
 
 
-<app-child-component1 [parentValueModel]="parentValue" (inputChange)="onChildValidataionStatusChange(0, $event)" ></app-child-component1>
-<app-child-component2 [parentValueModel]="parentValue" (inputChange)="onChildValidataionStatusChange(1, $event)"></app-child-component2>
-<app-child-component3 [parentValueModel]="parentValue" (inputChange)="onChildValidataionStatusChange(2, $event)"></app-child-component3>
+<app-child-component1 [parentValueModel]="parentForms" [formName]='"child1"' (inputChange)="onChildValidataionStatusChange(0, $event)" ></app-child-component1>
+<app-child-component2 [parentValueModel]="parentForms" [formName]='"child2"' (inputChange)="onChildValidataionStatusChange(1, $event)"></app-child-component2>
+<app-child-component3 [parentValueModel]="parentForms" [formName]='"child3"' (inputChange)="onChildValidataionStatusChange(2, $event)"></app-child-component3>
 
-<p style="color: red;" *ngIf="!isAllchildsValid">In Valid</p>
-<p style="color: blue;" *ngIf="isAllchildsValid">Valid</p>
+<p style="color: red;" *ngIf="!areAllChildGroupsValid()">In Valid</p>
+<p style="color: blue;" *ngIf="areAllChildGroupsValid()">Valid</p>

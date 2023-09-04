@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { BaseChildComponent } from '../base-child-component';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-child-component2',
@@ -14,11 +15,11 @@ export class ChildComponent2Component extends BaseChildComponent implements OnIn
   }
 
   ngOnInit(): void {
-    this.childComponent2Input = this.parentValueModel.input2;
+    this.myForm = this.parentValueModel.get(this.formName) as FormGroup;
+    this.myForm.addControl('input2', new FormControl('', [Validators.required, Validators.min(4)]))
   }
 
   override isValid() {
-    this.parentValueModel.input2 = this.childComponent2Input;
     this.isFormValid = this.childComponent2Input.length >= 4;
     return this.isFormValid
   }
