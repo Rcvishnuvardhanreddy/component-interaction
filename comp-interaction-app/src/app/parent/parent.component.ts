@@ -22,8 +22,4 @@ export class ParentComponent {
 
   ngOnInit(): void {
   }
-
-  dummyFunction(){
-    console.log('etestsss')
-  }
 }
